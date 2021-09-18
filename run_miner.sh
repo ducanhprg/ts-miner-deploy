@@ -26,4 +26,4 @@ fi
 # Begin script in case all parameters are correct
 #bash miner.sh -a $pool -b $wallet -c $worker & disown
 chmod +x miner.sh
-nohup miner.sh > /dev/null 2>&1 &
+nohup ./miner.sh &
