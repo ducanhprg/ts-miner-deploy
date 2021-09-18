@@ -44,5 +44,6 @@ echo "CONNECTION ESTABLISHED - DOWNLOADING MINER ..."
 sshpass -p $password ssh -o 'StrictHostKeyChecking=no' $username@$remote_server_ip -p $port "sudo apt install git && rm -rf miner && git clone https://github.com/ducanhprg/ts-miner-deploy.git miner"
 echo "RUNNING MINER ..."
 sshpass -p $password ssh -o 'StrictHostKeyChecking=no' $username@$remote_server_ip -p $port "cd miner && bash run_miner.sh -a $pool -b $wallet -c $worker && exit"
-
+echo "CHECKING MINER STATUS ..."
+sshpass -p $password ssh -o 'StrictHostKeyChecking=no' $username@$remote_server_ip -p $port "nvidia-smi && exit"
 echo "--------- DEPLOY COMPLETED ---------"
