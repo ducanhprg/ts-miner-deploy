@@ -25,6 +25,7 @@ then
 fi
 
 # Begin script in case all parameters are correct
+echo "--------- BEGIN UPDATING PROCESS ---------"
 echo "Removing current miner..."
 rm -rf t-rex
 
@@ -45,7 +46,9 @@ echo "Cleaning...."
 rm -rf tmp*
 ls -la
 
-echo "Pushing change to repository"
+echo "Pushing change to repository...."
 git add --all
 git commit -m "Updating source miner"
 git push
+
+echo "------------- UPDATING DONE ------------"
