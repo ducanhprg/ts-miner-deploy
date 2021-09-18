@@ -5,7 +5,7 @@ helpFunction()
 {
    echo ""
    echo "Usage: bash $0 -a source_miner_url"
-   echo -e "\t-a Example: https://github.com/trexminer/T-Rex/releases/download/0.21.6/t-rex-0.21.6-linux.tar.gz"
+   echo -e "\tExample: https://github.com/trexminer/T-Rex/releases/download/0.21.6/t-rex-0.21.6-linux.tar.gz"
    exit 1 # Exit script after printing help
 }
 
@@ -20,7 +20,7 @@ done
 # Print helpFunction in case parameters are empty
 if [ -z "$source_miner_url" ]
 then
-   echo "y";
+   echo "Some or all of the parameters are empty";
    helpFunction
 fi
 
