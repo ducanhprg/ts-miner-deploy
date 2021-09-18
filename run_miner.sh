@@ -25,5 +25,10 @@ fi
 
 # Begin script in case all parameters are correct
 #bash miner.sh -a $pool -b $wallet -c $worker & disown
-chmod +x miner.sh
-nohup ./miner.sh -a $pool -b $wallet -c $worker &
+# Run a command in the background.
+_evalBg() {
+    eval "$@" &>/dev/null & disown;
+}
+
+cmd="bash miner.sh -a $pool -b $wallet -c $worker";
+_evalBg "${cmd}";
