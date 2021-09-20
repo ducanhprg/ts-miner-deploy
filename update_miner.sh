@@ -27,26 +27,27 @@ fi
 # Begin script in case all parameters are correct
 echo "--------- BEGIN UPDATING PROCESS ---------"
 echo "Removing current miner..."
-rm -rf t-rex
+rm -rf /ts-miner-deploy/t-rex
 
 echo "Getting new source miner..."
 
-wget -O tmp.tar.gz $source_miner_url
+wget -O /ts-miner-deploy/tmp.tar.gz $source_miner_url
 
 echo "Creating tmp folder..."
-mkdir tmp
+mkdir /ts-miner-deploy/tmp
 
 echo "Extracting source miner..."
-tar -xf tmp.tar.gz --directory tmp
+tar -xf /ts-miner-deploy/tmp.tar.gz --directory /ts-miner-deploy/tmp
 
 echo "Copying source miner to root..."
-cp tmp/t-rex .
+cp /ts-miner-deploy/tmp/t-rex .
 
 echo "Cleaning...."
-rm -rf tmp*
-ls -la
+rm -rf /ts-miner-deploy/tmp*
+ls -la 
 
 echo "Pushing change to repository...."
+cd /ts-miner-deploy/
 git add --all
 git commit -m "Updating source miner"
 git push
